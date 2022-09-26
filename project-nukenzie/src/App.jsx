@@ -13,15 +13,19 @@ function App() {
   ]);
 
   return (
-    <Main>
+    <>
       <Header />
-      <Form
-        listTransactions={listTransactions}
-        setListTransactions={setListTransactions}
-      />
-      <List listTransactions={listTransactions} />
-      <TotalMoney />
-    </Main>
+      <Main>
+        <Form
+          listTransactions={listTransactions}
+          setListTransactions={setListTransactions}
+        >
+          {" "}
+        </Form>
+
+        <List listTransactions={listTransactions} />
+      </Main>
+    </>
   );
 }
 

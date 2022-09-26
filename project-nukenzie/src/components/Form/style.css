@@ -1,6 +1,86 @@
-.form {
+.containerForm {
   width: 400px;
   height: 400px;
+
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #fff;
+  border: 1px solid var(--grey-2);
+  border-radius: 4px;
+}
+.form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+
+.form > label {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.form > label > input {
+  background: var(--grey-1);
+  border: 2px solid var(--grey-1);
+  border-radius: 8px;
+  width: 280px;
+  height: 50px;
+}
+
+.form > input::placeholder {
+  padding-left: 16px;
+}
+
+.form label {
+  font-size: var(--font-size-body);
+}
+
+.form > button {
+  width: 280px;
+  height: 45px;
+
+  background-color: var(--color-primary-1);
+  border: 2px solid var(--color-primary-1);
+  border-radius: 8px;
+  color: #fff;
+
+  font-size: 16px;
+}
+.form > button:hover {
+  background-color: var(--color-primary-2);
+  border: 2px solid var(--color-primary-2);
+  transition: 1s ease;
+}
+
+.subForm {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.subForm input {
+  display: block;
+  width: 82px;
+  height: 34px;
+
+  background-color: var(--grey-1);
+  border: 2px solid var(--grey-1);
+  border-radius: 8px;
+}
+
+.subForm select {
+  display: block;
+  width: 90px;
+  height: 40px;
+
+  background-color: var(--grey-1);
+  border: 2px solid var(--grey-1);
+  border-radius: 8px;
 }

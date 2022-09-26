@@ -1,0 +1,7 @@
+.containerListCards {
+  width: 650px;
+}
+.navCards {
+  display: flex;
+  justify-content: space-between;
+}

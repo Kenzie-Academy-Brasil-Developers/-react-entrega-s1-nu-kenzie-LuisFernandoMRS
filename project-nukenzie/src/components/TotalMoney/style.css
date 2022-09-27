@@ -27,3 +27,8 @@
 .textValue {
   color: var(--color-primary-1);
 }
+@media (max-width: 768px) {
+  .containerValue {
+    width: 375px;
+  }
+}

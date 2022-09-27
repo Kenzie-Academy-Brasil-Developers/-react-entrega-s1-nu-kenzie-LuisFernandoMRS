@@ -15,14 +15,25 @@ export function Form({ listTransactions, setListTransactions }) {
   }
 
   function addListTransactions(description, value, type) {
-    setListTransactions([
-      ...listTransactions,
-      {
-        description: description,
-        type: type,
-        value: value,
-      },
-    ]);
+    if (type === "saída") {
+      setListTransactions([
+        ...listTransactions,
+        {
+          description: description,
+          type: type,
+          value: -value,
+        },
+      ]);
+    } else {
+      setListTransactions([
+        ...listTransactions,
+        {
+          description: description,
+          type: type,
+          value: value,
+        },
+      ]);
+    }
   }
 
   return (
@@ -72,7 +83,11 @@ export function Form({ listTransactions, setListTransactions }) {
           </button>
         </form>
       </div>
-      <TotalMoney />
+      {listTransactions.length !== 0 ? (
+        <TotalMoney listTransactions={listTransactions} />
+      ) : (
+        <></>
+      )}
     </div>
   );
 }

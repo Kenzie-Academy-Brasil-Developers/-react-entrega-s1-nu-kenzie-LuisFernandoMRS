@@ -10,7 +10,7 @@
   box-shadow: 0px 4px 32px -12px rgba(0, 0, 0, 0.25);
 }
 
-.header > button {
+.header > div > button {
   width: 60px;
   height: 40px;
 
@@ -20,7 +20,18 @@
 
   font-weight: var(--font-weight-3);
 }
-.header > button:hover {
+.header > div > button:hover {
   background-color: var(--grey-3);
   transition: 1.5s ease;
+}
+
+.containerHeader {
+  width: 1300px;
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .containerHeader {
+    justify-content: space-around;
+  }
 }

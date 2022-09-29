@@ -16,7 +16,7 @@ export function Form({ listTransactions, setListTransactions }) {
   }
 
   function addListTransactions(description, value, type) {
-    if (description === "") {
+    if (description === "" && value === "" && type === "") {
       toast.error("Adicione uma transação", {
         position: toast.POSITION.TOP_CENTER,
       });
@@ -78,7 +78,7 @@ export function Form({ listTransactions, setListTransactions }) {
                 value={type}
                 onChange={(event) => setType(event.target.value)}
               >
-                <option>Selecione</option>
+                <option selected={true}>Selecione</option>
                 <option value="entrada">entrada</option>
                 <option value="saída">saida</option>
               </select>

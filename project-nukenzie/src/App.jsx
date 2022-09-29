@@ -6,17 +6,17 @@ import { List } from "./components/ListCard";
 import { TotalMoney } from "./components/TotalMoney";
 import { Main } from "./components/Main";
 import { InicialPage } from "./components/InicialPage";
+import { ToastContainer } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.min.css";
 
 function App() {
   const [page, setPage] = useState(false);
-  const [listTransactions, setListTransactions] = useState([
-    { description: "Salário recebido", type: "entrada", value: 2500 },
-    { description: "Conta de luz", type: "saída", value: -150 },
-  ]);
+  const [listTransactions, setListTransactions] = useState([]);
   function renderPage(set) {
     setPage(set);
   }
-  console.log(page);
+
   return (
     <>
       {page ? (
@@ -37,6 +37,7 @@ function App() {
               />
             </div>
           </Main>
+          <ToastContainer />
         </div>
       ) : (
         <InicialPage setPage={setPage} renderPage={renderPage} />

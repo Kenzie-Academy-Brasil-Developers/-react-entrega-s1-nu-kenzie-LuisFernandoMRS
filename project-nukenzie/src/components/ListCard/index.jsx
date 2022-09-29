@@ -1,6 +1,10 @@
 import { useState } from "react";
 import NoCard from "./NoCard.svg";
 import "./style.css";
+
+import { AiFillDelete } from "react-icons/ai";
+import { StyledDecoretionCard } from "./style";
+
 export function List({ listTransactions, setListTransactions }) {
   const [listEntryOrExit, setListEntryOrExit] = useState("todos");
   const [list, setFilter] = useState([]);
@@ -15,7 +19,7 @@ export function List({ listTransactions, setListTransactions }) {
     });
     setFilter(item);
   };
-  console.log(list);
+  console.log(listTransactions);
   return (
     <>
       <div className="containerListCards">
@@ -66,7 +70,8 @@ export function List({ listTransactions, setListTransactions }) {
             {listTransactions.map((transaction, index) => {
               return (
                 <li key={index} className="card">
-                  <span className="decorationCard"></span>
+                  <StyledDecoretionCard type={transaction.type} />
+
                   <div className="descriptionCard">
                     <h3>{transaction.description}</h3>
                     <p>{transaction.type}</p>
@@ -77,7 +82,7 @@ export function List({ listTransactions, setListTransactions }) {
                       type="button"
                       onClick={() => removeCard(transaction)}
                     >
-                      x
+                      <AiFillDelete />
                     </button>
                   </div>
                 </li>
@@ -101,7 +106,7 @@ export function List({ listTransactions, setListTransactions }) {
                       type="button"
                       onClick={() => removeCard(transaction)}
                     >
-                      x
+                      <AiFillDelete />
                     </button>
                   </div>
                 </li>

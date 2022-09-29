@@ -1,6 +1,7 @@
 import "./style.css";
 import { useState } from "react";
 import { TotalMoney } from "../TotalMoney";
+import { ToastContainer, toast } from "react-toastify";
 export function Form({ listTransactions, setListTransactions }) {
   const [description, setDescription] = useState("");
   const [value, setValue] = useState("");
@@ -15,7 +16,11 @@ export function Form({ listTransactions, setListTransactions }) {
   }
 
   function addListTransactions(description, value, type) {
-    if (type === "saída") {
+    if (description === "") {
+      toast.error("Adicione uma transação", {
+        position: toast.POSITION.TOP_CENTER,
+      });
+    } else if (type === "saída") {
       setListTransactions([
         ...listTransactions,
         {
@@ -24,6 +29,9 @@ export function Form({ listTransactions, setListTransactions }) {
           value: -value,
         },
       ]);
+      toast.success("Saída criada com sucesso", {
+        position: toast.POSITION.TOP_CENTER,
+      });
     } else {
       setListTransactions([
         ...listTransactions,
@@ -33,6 +41,9 @@ export function Form({ listTransactions, setListTransactions }) {
           value: value,
         },
       ]);
+      toast.success("Entrada criada com sucesso", {
+        position: toast.POSITION.TOP_CENTER,
+      });
     }
   }
 

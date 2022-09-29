@@ -95,7 +95,7 @@ export function List({ listTransactions, setListTransactions }) {
             {list.map((transaction, index) => {
               return (
                 <li key={index} className="card">
-                  <span className="decorationCard"></span>
+                  <StyledDecoretionCard type={transaction.type} />
                   <div className="descriptionCard">
                     <h3>{transaction.description}</h3>
                     <p>{transaction.type}</p>
